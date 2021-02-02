@@ -16,7 +16,7 @@ def root_s(x1, x2, t,xx,yy):
     c1 = x1
     c2 = x2
 
-    if f1 == 0.0:
+    if f(x1) == 0.0:
 
         xx1.append(float(x1))
         yy1.append(float(f(x1)))
@@ -27,7 +27,7 @@ Value is found
 x = ''', x1)
         graph_print(xx, yy, x1)
         return x1
-    elif f2 == 0.0:
+    elif f(x2) == 0.0:
 
         xx1.append(float(x1))
         yy1.append(float(f(x1)))
@@ -39,7 +39,7 @@ x = ''', x2)
         graph_print(xx, yy, x2)
         return x2
 
-    if f1 * f2 < 0:
+    if f(x1) * f(x2) < 0:
 
         while tol_diff > t:
             mm2 = mm
@@ -58,7 +58,7 @@ x = ''', x2)
                 print ('x = ', m)
                 graph_print(xx, yy, m)
                 return m
-            elif f1 * mm < 0:
+            elif f(x1) * mm < 0:
 
                 x2 = m
             else:
@@ -83,7 +83,7 @@ x = ''', x2)
                 graph_print(xx, yy, m)
 
                 return m
-            elif f1 * mm < 0:
+            elif f(x1) * mm < 0:
 
                 x2 = m
             else:
@@ -112,7 +112,7 @@ x = ''', x2)
                 graph_print(xx, yy, cm)
 
                 return cm
-            elif f2 * mm < 0:
+            elif f1 * mm < 0:
 
                 c1 = cm
             else:
@@ -142,8 +142,8 @@ x = ''', x2)
 
 def f(x):
 
-    k = pow(x,3) + pow(x,2) + 2*x -30
-    #k = pow(x, 2) + 5.00 * x - 15.0
+    #k = pow(x,3) + pow(x,2) + 2*x -30
+    k = pow(x, 2) + 2.00 * x - 15.0
     return k
 
 def relative_diff(a, b):
