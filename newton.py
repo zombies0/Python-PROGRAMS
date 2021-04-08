@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import math
 
 def root_s(x1, x2, t,xx,yy):
 
@@ -152,7 +153,7 @@ x = ''', x2)
 def f(x):
 
     #k = pow(x,3) + pow(x,2) + 2*x -30
-    k = pow(x, 2) + 2.00 * x - 15.0
+    k = x*math.log10(x)-1.2
     return k
 
 def relative_diff(a, b):
